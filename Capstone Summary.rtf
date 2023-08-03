@@ -1,0 +1,97 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033\deflangfe2052{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+{\colortbl ;\red13\green129\blue182;\red51\green51\blue51;\red7\green55\blue99;}
+{\stylesheet{ Normal;}{\s1 heading 1;}{\s2 heading 2;}}
+{\*\generator Riched20 10.0.19041}{\*\mmathPr\mnaryLim0\mdispDef1\mwrapIndent1440 }\viewkind4\uc1 
+\pard\keep\keepn\widctlpar\s1\li180\sl276\slmult1\cf1\f0\fs32 Analyzing Air Quality Index (AQI) and Population Data\par
+
+\pard\widctlpar\fi540\li180\sl276\slmult1\cf2\fs20\par
+
+\pard\keep\keepn\widctlpar\s1\sl240\slmult1\cf1\fs32 Introduction\par
+
+\pard\keep\keepn\widctlpar\s1\li180\sl240\slmult1\cf2\fs20 Given the increasing frequency of air quality alerts during the summer, I became concerned about the global air quality situation. To gain deeper insights into this issue, I delved into AQI data spanning the past year from various regions worldwide. By analyzing this data, I aimed to gain a better understanding of how population and air quality are intertwined and whether specific factors contribute to AQI fluctuations.\par
+
+\pard\keep\keepn\widctlpar\s1\sl240\slmult1\par
+
+\pard\keep\keepn\widctlpar\s1\li180\sl240\slmult1 In this R project, my primary objective was to investigate the connection between Air Quality Index (AQI) and population data across different countries. I aimed to uncover potential relationships between population size and AQI levels.\par
+
+\pard\widctlpar\fi540\li180\sl276\slmult1\par
+
+\pard\keep\keepn\widctlpar\s1\sl240\slmult1\cf1\fs32 Data Import and Preparation\par
+
+\pard\keep\keepn\widctlpar\s1\li180\sl240\slmult1\cf2\fs20 To begin my analysis, I imported two datasets, namely AQI_Data.csv and World_Pop_2022.csv, into Google Sheets. For the World Population data, I focused solely on the 2022 population, country, and continent information. To streamline the data, I removed unnecessary columns, which I saved for future analysis. On the other hand, I retained all the data in the AQI dataset, as it was vital for my analysis.\par
+
+\pard\widctlpar\li180\sl240\slmult1\par
+The first dataset provided daily AQI values for different countries, while the second dataset contained population data specifically for the year 2022. Once I had made these adjustments, I imported the updated datasets into RStudio.\par
+\par
+With the necessary packages, including tidyverse, lubridate, and ggplot2, loaded, I merged the two datasets based on the "Country" column. This merging process enabled me to compare AQI and population data for each country on the same date, setting the foundation for my subsequent analysis.\par
+
+\pard\widctlpar\fi540\li180\sl276\slmult1\par
+
+\pard\keep\keepn\widctlpar\s1\sl240\slmult1\cf1\fs32 Data Analysis\par
+
+\pard\keep\keepn\widctlpar\s1\li180\sl240\slmult1\cf2\fs20 To begin the analysis, I checked the structure of the merged dataset and verified that there were no missing values. Next, I identified the most recent date available in the dataset, which happened to be 7/27/2023.\par
+
+\pard\keep\keepn\widctlpar\s1\sl240\slmult1\par
+
+\pard\keep\keepn\widctlpar\s1\li180\sl240\slmult1 I also used the distinct() function to remove any duplicate dates and keep only the first occurrence of each country on each date. This ensured that the dataset was clean and ready for further analysis.\par
+
+\pard\widctlpar\fi540\li180\sl276\slmult1\par
+
+\pard\keep\keepn\widctlpar\s1\sl240\slmult1\cf1\fs32 Findings\par
+
+\pard\keep\keepn\widctlpar\s1\li180\sl240\slmult1\cf2\fs20 I found that there was no significant correlation between population and AQI. Geographic location and weather patterns appeared to be more influential factors in AQI variation.\par
+
+\pard\keep\keepn\widctlpar\s1\sl240\slmult1\par
+
+\pard\keep\keepn\widctlpar\s2\li720\sl240\slmult1\tx360\tx1080\cf3\b\fs26 The Country with the Worst AQI Overall: \par
+
+\pard\widctlpar\li810\sl240\slmult1\cf2\b0\fs20 Based on the available data, India had the highest overall AQI levels.\par
+
+\pard\keep\keepn\widctlpar\s2\li720\sl240\slmult1\cf3\b\fs26 The country with the Best AQI Overall: \par
+
+\pard\keep\widctlpar\li810\sl240\slmult1\cf2\b0\fs20 Guam had the lowest overall AQI levels among all countries in the dataset.\par
+
+\pard\widctlpar\sl276\slmult1\par
+
+\pard\keep\keepn\widctlpar\s1\sl240\slmult1\cf1\fs32 Visualizations\par
+
+\pard\widctlpar\li180\sl240\slmult1\cf2\fs20 To better understand the AQI trends for specific countries, I created line plots for China, the USA, and Gibraltar. These line plots showed how AQI levels changed over time for each country.\par
+\par
+For a broader view of AQI and population data, I used ggplot2 to create a scatter plot comparing the average AQI with the population for each country. However, due to the large number of data points, the scatter plot was not visually appealing and challenging to read.\par
+
+\pard\widctlpar\li360\sl276\slmult1\par
+
+\pard\keep\keepn\widctlpar\s1\li360\sl240\slmult1\cf1\fs32\par
+
+\pard\keep\keepn\widctlpar\s1\sl240\slmult1 Interactive Visualization\par
+
+\pard\widctlpar\li180\sl240\slmult1\cf2\fs20 To address the challenges with the scatter plot, I utilized Tableau to create an interactive scatter plot. The interactive plot allowed me to visualize AQI and population data for each country more effectively. Each country was represented as a colored dot, with the dot size corresponding to its population size. Hovering over the dots displayed country-specific information.\par
+
+\pard\widctlpar\sl276\slmult1\par
+
+\pard\keep\keepn\widctlpar\s1\sl240\slmult1\cf1\fs32 Solutions?\par
+
+\pard\widctlpar\li180\sl240\slmult1\cf2\fs20 Addressing air quality issues on a global scale is undoubtedly a complex and challenging endeavor. The Air Quality Index (AQI) is influenced by a multitude of factors, and achieving significant improvements would necessitate numerous changes and concerted efforts.\par
+\par
+However, with the dissemination of more accessible information to the public and a strong focus on education, there is hope for progress. Empowering individuals with knowledge about air quality and its impact on health can lead to increased awareness and more active participation in seeking solutions.\par
+\par
+While it is uncertain whether I will witness a profound impact in my lifetime, the collective dedication to tackling this issue gives me reason for optimism. Effectively improving AQI requires a comprehensive approach, involving governmental regulations, technological innovations, heightened public consciousness, and collaborative actions across all sectors of society.\par
+\par
+Ultimately, by working together as governments, industries, communities, and individuals, we can make strides toward cleaner air and better public health, making the aspiration of a healthier future a tangible possibility.\par
+
+\pard\keep\keepn\widctlpar\s1\sl240\slmult1\cf1\fs32\par
+Future Exploration\par
+
+\pard\widctlpar\li180\sl240\slmult1\cf2\fs20 This project provides valuable insights into the relationship between AQI and population data for different countries. However, there are numerous opportunities for further exploration. For a more comprehensive analysis, additional factors such as weather patterns, CO2 levels, and geographical locations could be incorporated. Moreover, creating a map visualization to display the geographical locations of each country and their AQI levels would enhance the understanding of global air quality patterns.\par
+
+\pard\widctlpar\sl240\slmult1\par
+
+\pard\keep\keepn\widctlpar\s1\sl240\slmult1\cf1\fs32 Conclusion\par
+
+\pard\widctlpar\li180\sl240\slmult1\cf2\fs20 This project offers valuable insights into the intricate relationship between AQI and population data, providing a foundation for future research and exploration of the factors influencing air quality on a global scale. By examining the data, we have begun to unravel the complexities of AQI variations and how they may be linked to population dynamics. This work serves as a stepping stone for continued investigations, opening the door to a deeper understanding of the dynamics at play in the realm of air quality worldwide.\par
+
+\pard\widctlpar\sl276\slmult1\par
+
+\pard\widctlpar\sa240\sl276\slmult1\par
+}
+ 
